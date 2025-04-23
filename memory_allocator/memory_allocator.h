@@ -6,7 +6,7 @@
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:40:40 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 16:10:57 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/23 19:06:39 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 typedef struct s_memory_block
 {
-	void					*data;
 	struct s_memory_block	*next;
 	struct s_memory_block	*prev;
 }							t_memory_block;

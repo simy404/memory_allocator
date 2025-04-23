@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allocator.h                                        :+:      :+:    :+:   */
+/*   allocator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:41:39 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 16:12:20 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/23 19:06:54 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,17 @@ void	*safe_malloc(size_t size, t_mem_type mem_type)
 	if (mem_block == NULL)
 		safe_abort(STD_EXIT);
 	*mem_block = (t_memory_block){
-		.data = mem_block + 1,
 		.next = NULL,
 		.prev = NULL
 	};
 	head = get_memory_head(mem_type);
-	if (*head == NULL)
-		*head = mem_block;
-	else
+	if (*head != NULL)
 	{
 		mem_block->next = *head;
 		(*head)->prev = mem_block;
-		*head = mem_block;
 	}
-	return (mem_block->data);
+	*head = mem_block;
+	return (mem_block + 1);
 }
 
 void	*safe_talloc(size_t size)
