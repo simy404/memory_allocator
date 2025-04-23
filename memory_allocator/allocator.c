@@ -6,7 +6,7 @@
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:41:39 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 19:06:54 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/23 19:09:10 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*safe_malloc(size_t size, t_mem_type mem_type)
 	t_memory_block	*mem_block;
 	t_memory_block	**head;
 
-	mem_block = (t_memory_block*)malloc(sizeof(t_memory_block) + size);
+	mem_block = malloc(sizeof(t_memory_block) + size);
 	if (mem_block == NULL)
 		safe_abort(STD_EXIT);
 	*mem_block = (t_memory_block){
