@@ -6,7 +6,7 @@
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:57:12 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 19:12:40 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/23 21:37:09 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	safe_free_ptr(void *ptr, t_mem_type mem_type)
 	if (ptr == NULL || *head == NULL)
 		return ;
 	mem_block = (t_memory_block*)ptr - 1;
+	if (mem_block->magic != (MAGIC | (size_t)mem_type))
+		return ;
 	if (mem_block->prev != NULL)
 		mem_block->prev->next = mem_block->next;
 	if (mem_block->next != NULL)
