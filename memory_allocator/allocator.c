@@ -6,7 +6,7 @@
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:41:39 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 21:36:22 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/24 19:36:15 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 t_memory_block	**get_memory_head(t_mem_type mem_type)
 {
-	static t_memory_block	*temp_mem_blocks = NULL;
-	static t_memory_block	*pers_mem_blocks = NULL;
+	static t_memory_block	*mem_blocks[2] = {0};
 
-	if (mem_type == PERSISTENT)
-		return (&pers_mem_blocks);
-	return (&temp_mem_blocks);
+	return (&mem_blocks[mem_type]);
 }
 
 void	*safe_malloc(size_t size, t_mem_type mem_type)

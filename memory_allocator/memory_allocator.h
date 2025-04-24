@@ -6,7 +6,7 @@
 /*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:40:40 by hsamir            #+#    #+#             */
-/*   Updated: 2025/04/23 21:32:35 by hsamir           ###   ########.fr       */
+/*   Updated: 2025/04/23 21:55:47 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stddef.h>
 
 # define STD_EXIT 1
-
 # define MAGIC 0x4853414D49523432
 
 typedef struct s_memory_block
